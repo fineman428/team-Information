@@ -1,11 +1,12 @@
-rentalService\AbstractEvent.class
-rentalService\MyOrder.class
 rentalService\MyOrderRepository.class
 rentalService\config\kafka\KafkaProcessor.class
-rentalService\MyOrderViewHandler.class
-rentalService\PolicyHandler.class
+rentalService\OutOfStockRentalCanceled.class
 rentalService\RentalCanceled.class
-rentalService\Rentaled.class
 rentalService\AbstractEvent$1.class
 rentalService\Delivered.class
+rentalService\AbstractEvent.class
+rentalService\MyOrder.class
+rentalService\MyOrderViewHandler.class
+rentalService\PolicyHandler.class
+rentalService\Rentaled.class
 rentalService\InformationApplication.class

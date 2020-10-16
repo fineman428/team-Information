@@ -86,4 +86,23 @@ public class MyOrderViewHandler {
             e.printStackTrace();
         }
     }
+
+    @StreamListener(KafkaProcessor.INPUT)
+    public void whenOutOfStockRentalCanceled_then_UPDATE_1(@Payload OutOfStockRentalCanceled outOfStockRentalCanceled){
+
+        if(outOfStockRentalCanceled.isMe()){
+
+            // view 객체 조회
+            List<MyOrder> myOrderList = myOrderRepository.findByRentalId(outOfStockRentalCanceled.getId());
+            for(MyOrder myOrder : myOrderList){
+                // view 객체에 이벤트의 eventDirectValue 를 set 함
+                myOrder.setRentalStatus(outOfStockRentalCanceled.getStatus());
+                myOrder.setDeliveryStatus(outOfStockRentalCanceled.getStatus());
+                // view 레파지 토리에 save
+                myOrderRepository.save(myOrder);
+            }
+
+        }
+
+    }
 }

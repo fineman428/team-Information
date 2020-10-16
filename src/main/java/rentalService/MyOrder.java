@@ -1,8 +1,11 @@
 package rentalService;
 
+import lombok.Data;
+
 import javax.persistence.*;
 import java.util.List;
 
+@Data
 @Entity
 @Table(name="MyOrder_table")
 public class MyOrder {
@@ -12,13 +15,14 @@ public class MyOrder {
         private Long id;
         private Long productId;
         private Long rentalId;
-        private Integer rentalQty;
+        private int rentalQty;
         private String rentalStatus;
         private Long deliveryId;
         private String deliveryStatus;
         private String productName;
 
 
+        /*
         public Long getId() {
             return id;
         }
@@ -75,5 +79,7 @@ public class MyOrder {
         public void setProductName(String productName) {
         this.productName = productName;
     }
+    */
+
 
 }
