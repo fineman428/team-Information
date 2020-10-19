@@ -1,12 +1,12 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: Information
+  name: information
   labels:
-    app: Information
+    app: information
 spec:
   ports:
     - port: 8080
       targetPort: 8080
   selector:
-    app: Information
+    app: information
