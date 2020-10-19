@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: Information
+  name: information
   labels:
-    app: Information
+    app: information
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: Information
+      app: information
   template:
     metadata:
       labels:
-        app: Information
+        app: information
     spec:
       containers:
-        - name: Information
-          image: Information:latest
+        - name: information
+          image: 496278789073.dkr.ecr.ap-northeast-1.amazonaws.com/skccuser02-Information:v1
           ports:
             - containerPort: 8080
           readinessProbe:
